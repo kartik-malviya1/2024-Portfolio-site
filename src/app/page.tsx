@@ -85,7 +85,7 @@ export default function Home() {
               </h1>
               </Link>
               <p className="text-xl font-medium mt-3 text-slate-200 tracking-tight">
-                Front End Engineer
+                Front End Developer
               </p>
               <p className="mt-4 max-w-xs">
                 I build accessible, pixel-perfect digital experiences for the
