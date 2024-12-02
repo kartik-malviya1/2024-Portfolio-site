@@ -300,7 +300,7 @@ export default function Home() {
                     <div className="z-10 sm:col-span-6">
                       <h3 className="font-medium leading-snug text-slate-200">
                         <div>
-                          <a className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://github.com/kartik-malviya1/FoundrGuide" target="_blank" rel="noreferrer">
+                          <a className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base" href="https://foundrguide.vercel.app" target="_blank" rel="noreferrer">
                             <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                             <span>
                               Build a AI Powered Platform for Founders {" "} 
