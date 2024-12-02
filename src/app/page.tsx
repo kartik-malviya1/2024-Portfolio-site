@@ -74,71 +74,73 @@ export default function Home() {
     return (
       <div
       ref={heroRef}
-      className="min-h-screen text-slate-400 relative z-30 radial-blue py-24">
-      <div className="mx-auto flex max-w-7xl justify-around px-6 md:gap-8 mt-0">
-        <header className="sticky top-24 h-fit max-w-sm">
-          <nav className="grid gap-6">
-            <div className="">
+      className="min-h-screen text-slate-400 relative z-30 radial-blue py-12 lg:py-24">
+      <div className="mx-auto flex flex-col lg:flex-row max-w-7xl justify-around px-4 lg:px-6 md:gap-8 mt-0">
+        <header className="relative lg:sticky lg:top-24 h-fit max-w-sm mb-12 lg:mb-0">
+          <nav className="grid gap-4 lg:gap-6">
+            <div className="text-center lg:text-left">
               <Link href={'/'} className="cursor-pointer">
-              <h1 className="text-5xl font-bold text-slate-200">
+              <h1 className="text-4xl lg:text-5xl font-bold text-slate-200">
                 Kartik Malviya
               </h1>
               </Link>
-              <p className="text-xl font-medium mt-3 text-slate-200 tracking-tight">
+              <p className="text-lg lg:text-xl font-medium mt-2 lg:mt-3 text-slate-200 tracking-tight">
                 Front End Developer
               </p>
-              <p className="mt-4 max-w-xs">
+              <p className="mt-4 max-w-xs mx-auto lg:mx-0">
                 I build accessible, pixel-perfect digital experiences for the
                 web.
               </p>
             </div>
-            <ul className="grid gap-3 mt-14">
+            <ul className="grid gap-2 lg:gap-3 mt-6 lg:mt-14">
               {["about", "experience", "projects"].map((item) => (
-                <li key={item} className="relative">
+                <li key={item} className="relative group">
                   <Link
                     href={`#${item}`}
                     onClick={(e) => handleNavClick(e, item)}
-                    className={`group relative flex items-center font-semibold tracking-widest py-1 text-xs transition-colors duration-300 hover:text-slate-200 ${
+                    className={`relative flex items-center justify-center lg:justify-start font-semibold tracking-widest py-2 lg:py-1 text-xs transition-colors duration-300 hover:text-slate-200 ${
                       activeSection === item ? "text-slate-200" : ""
                     }`}
                   >
-                    <span
-                      className={`absolute left-0 top-1/2 h-[1px] w-8 -translate-y-2/3 bg-slate-200 transition-opacity duration-300 ${
-                        activeSection === item ? "opacity-100" : "opacity-0"
-                      }`}
-                    />
-                    <span className="relative ml-10">
+                    <div className="relative mr-10 hidden lg:block">
+                      <span
+                        className={`absolute left-0 top-1/2 h-[1px] w-8 -translate-y-1/2 bg-slate-200 transition-all duration-300 ${
+                          activeSection === item ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                        }`}
+                      />
+                    </div>
+                    
+                    <span className="relative">
                       {item.toUpperCase()}
                     </span>
-                    <span
-                      className={
-                        "absolute bottom-0 left-10 h-[1px] bg-slate-200 transition-all duration-300"
-                      }
-                    />
                   </Link>
                 </li>
               ))}
             </ul>
           </nav>
-          <footer className="fixed bottom-24">
-            <div className="flex gap-4 items-center ">
-              <Link href="https://github.com/kartik-malviya1" target="_blank" className="transition-colors duration-100 hover:text-slate-200">
-                <IoLogoGithub className="h-7 w-7" />
+          <footer className="mt-12 lg:fixed lg:bottom-24">
+            <div className="flex gap-4 items-center justify-center lg:justify-start">
+              <Link href="https://github.com/kartik-malviya1" target="_blank" 
+                    className="p-2 -m-2 transition-colors duration-100 hover:text-slate-200">
+                <IoLogoGithub className="h-[1.56rem] w-[1.56rem]" />
               </Link>
-              <Link href="https://www.linkedin.com/in/kartik-malviya-data-science/" target="_blank" className="transition-colors duration-100 hover:text-slate-200">
+              <Link href="https://www.linkedin.com/in/kartik-malviya-data-science/" target="_blank"
+                    className="p-2 -m-2 transition-colors duration-100 hover:text-slate-200">
                 <IoLogoLinkedin className="h-[1.4rem] w-[1.4rem]" />
               </Link>
-              <Link href="https://x.com/Kartikmalviya_" target="_blank" className="transition-colors duration-100 hover:text-slate-200">
+              <Link href="https://x.com/Kartikmalviya_" target="_blank"
+                    className="p-2 -m-2 transition-colors duration-100 hover:text-slate-200">
                 <BsTwitterX className="h-[1.4rem] w-[1.4rem]" />
               </Link>
-              <Link href="https://www.instagram.com/kartik_malviya1/" target="_blank" className="transition-colors duration-00 hover:text-slate-200">
+              <Link href="https://www.instagram.com/kartik_malviya1/" target="_blank"
+                    className="p-2 -m-2 transition-colors duration-100 hover:text-slate-200">
                 <SiInstagram className="h-[1.4rem] w-[1.4rem]" />
               </Link>
             </div>
           </footer>
         </header>
-        <main className="grid gap-24 max-w-[33rem] leading-relaxed">
-          <section id="about" ref={sectionRefs.about} className="grid gap-8">
+        <main className="grid leading-relaxed gap-16 lg:gap-24 max-w-[33rem] px-4 lg:px-0">
+          <section id="about" ref={sectionRefs.about} className="grid gap-6 lg:gap-8">
             <p className="max-w-2xl ">
               I&apos;m a developer passionate about crafting accessible,
               pixel-perfect user interfaces that blend thoughtful design with
@@ -166,7 +168,7 @@ export default function Home() {
                         <div>
                           <p className="inline-flex cursor-pointer items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base">
                             <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
-                            <span>
+                            <span className="ml-16 sm:ml-0">
                               View My  {" "} 
                               <span className="inline-block">
                                 Resume
@@ -185,7 +187,7 @@ export default function Home() {
           <section
             id="experience"
             ref={sectionRefs.experience}
-            className="grid gap-12 mt-8"
+            className="grid gap-8 lg:gap-12 mt-8"
           >
             <ol className="group/list">
                 <li className="mb-12 mt-12">
@@ -243,7 +245,7 @@ export default function Home() {
           <section
             id="projects"
             ref={sectionRefs.projects}
-            className="grid gap-8"
+            className="grid gap-6 lg:gap-8"
           >
             <ol className="group/list">
                 <li className="mb-12">

@@ -12,10 +12,13 @@ html {
 }
 
 body {
+  @apply antialiased;
   color: var(--foreground);
   background: #0F172A;
-  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-feature-settings: "ss03", "cv02", "cv11"
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  font-feature-settings: "ss03", "cv02", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .radial-blue {
@@ -25,4 +28,16 @@ body {
       transparent 80%
     );
     background-attachment: fixed;
+}
+
+@layer utilities {
+  .content-auto {
+    content-visibility: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .radial-blue {
+    background-attachment: scroll;
+  }
 }
